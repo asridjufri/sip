@@ -1,0 +1,64 @@
+<script>
+    $(document).ready(function(){
+        $.get("{{url}}", function(data){
+            
+            Highcharts.chart('{{container_id}}', {
+            chart: {
+                type: "{{chart_type}}"
+            },
+            title: {
+                text: data.title
+            },
+            subtitle: {
+                text: 'Source: data dinas pariwisata tangsel'
+            },
+            xAxis: {
+                categories: data.categories,
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Jumlah Wisatawan',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            tooltip: {
+                valueSuffix: ' millions'
+            },
+            plotOptions: {
+                column: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -40,
+                y: 80,
+                floating: true,
+                borderWidth: 1,
+                backgroundColor:
+                    Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+                shadow: true
+            },
+            credits: {
+                enabled: false
+            },
+            series: data.series
+        });
+    
+            
+        });
+       
+    })
+    
+    </script>

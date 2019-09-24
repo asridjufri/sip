@@ -1,0 +1,55 @@
+
+{% extends 'app/shared/base.html' %}
+{% load static%}
+
+{% block body %}
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Slide</h2>
+        
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Slide</h5>
+                   
+                </div>
+                <div class="ibox-content">
+                     
+                {{excel.upload_log}}        
+                        
+                  
+                        
+                    
+                       
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock body%}
+
+
+{% block js_footer%}
+<script src="{% static 'app/js/plugins/dataTables/datatables.min.js' %}"></script>
+<script src="{% static 'app/js/plugins/dataTables/dataTables.bootstrap4.min.js' %}"></script>
+<script>
+    $(document).ready(function(){
+       
+        
+
+    });
+
+</script>
+{% endblock%}
+
+{% block css_header %}
+<link href="{% static 'app/css/plugins/dataTables/datatables.min.css' %}" rel="stylesheet">     
+{% endblock %}

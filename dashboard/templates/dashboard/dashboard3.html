@@ -1,0 +1,266 @@
+{% load static%}
+{% load dashboard_tag %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#7266ba">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#7266ba" />
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <title>Iwiki - Dashboard</title>
+
+
+  <link rel="stylesheet" href="{% static 'dashboard/css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard/css/animate.min.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard/css/vendors/sweetalert.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard/css/vendors/loading.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'dashboard/css/bootstrap-select.css' %}" />
+
+
+
+
+<link rel="stylesheet" href="{% static 'dashboard/css/vendors/calendar-mini.css' %}">
+
+  <link rel="stylesheet" href="{% static 'dashboard/css/main.css' %}">
+  <script src="{% static 'dashboard/js/modernizr.js' %}"></script>
+
+  <link rel="icon" href="{% static 'dashboard/img/favicon.ico' %}" type="image/x-icon" />
+  <link rel="shortcut icon" href="{% static 'dashboard/img/favicon.ico' %}" type="image/x-icon" />
+
+  <!--[if lt IE 9]>
+    <script src="{% static 'dashboard/js/html5shiv.min.js' %}"></script>
+    <script src="{% static 'dashboard/js/respond.src.js' %}"></script>
+  <![endif]-->
+</head>
+
+
+
+
+<body class="nosidebar-left">
+  <div id="wrap-content" class="wrap-content">
+
+   <div class="preloader">
+        <div class="preloader-anim la-animate"></div>
+        <div class="loading-anim">Loading</div>
+    </div>
+
+    <div class="aside">
+            <a href="index.html" class="btn-logo-tangsel"></a>
+            
+            
+          </div>
+          <div class="header">
+            <div class="unit title">
+              <h5 class="primary font-weight-700">Dinas Pariwisata</h5>
+              <h6 class="secondary">Kota Tangerang Selatan</h6>
+            </div>
+            <div class="unit morphsearch">
+              <marquee> <h5>:: Dinas Pariwisata :: hari ini situgintung mengadakan event gratis berenang ::</h5></marquee>
+            </div>
+            <div class="unit time">
+              <span class="current-time">18:38</span>
+              <span class="current-date">14 september</span>
+            </div>
+           
+          <div class="unit backet">
+            <span class="side-btn" id="side-btn"><i class="fa fa-th"></i></span>
+          </div>
+          </div>
+          
+
+
+
+    <div class="content container-fluid">
+      
+     
+
+      <div class="row row-broken" data-height>
+        <div class="col-sm-12 col-md-3">
+          <div class="decor-default chart content-block" data-height-col>
+            <div class="chart-container full">
+              <div id="chart-1" style="height:100%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12  col-md-3">
+          
+            <div class="decor-default chart content-block" data-height-col>
+              <div class="chart-container full">
+                <div id="chart-2" style="height: 100%"></div>
+              </div>
+            </div>
+            
+        </div>
+        <div class="col-sm-12  col-md-6">
+          
+            <div class="decor-default chart content-block" data-height-col>
+              <div class="chart-container full">
+                <div id="chart-3" style="height: 100%"></div>
+              </div>
+            </div>
+            
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-10">
+                <div class="row row-broken" data-height>
+                    <div class="col-sm-12 col-md-12">
+                    <div class="decor-default  chart content-block" data-height-col>
+                        <div class="chart-container full">
+                        <div id="chart-4" style="height: 100%"></div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="row row-broken" data-height>
+                    <div class="col-sm-12 col-md-12">
+                        <div class="decor-default  chart content-block" data-height-col>
+                            <div class="chart-container full">
+                            <div id="chart-5" style="height: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+          <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-12">
+                            <b style="text-align: center;">Frekuensi Update Data</b>
+                            <table class="table table-stripped with-border">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Usaha</th>
+                                        <th>Jumlah Update</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>APSG Situ Gintung</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Taman Tekno</td>
+                                        <td>2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+          </div>
+      </div>
+   
+
+       
+    </div>
+     
+
+
+
+
+      
+    </div>
+    <div class="footer">
+        © Dinas Pariwisata TANGSEL
+        
+    </div>
+
+  </div>
+
+ 
+
+<div id="overlay" class="overlay"></div>
+
+
+
+  
+    <script src="{% static 'dashboard/js/jquery.js' %}"></script>
+    <script src="{% static 'dashboard/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'dashboard/js/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static 'dashboard/js/classie.js' %}"></script>
+    <script src="{% static 'dashboard/js/bootstrap-select.min.js' %}"></script>
+    
+    <script src="{% static 'dashboard/js/sweetalert.min.js' %}"></script>
+    <script src="{% static 'dashboard/js/moment.min.js' %}"></script>
+    <script src="{% static 'dashboard/js/polyfill.object-fit.min.js' %}"></script>
+
+    <script src="{% static 'dashboard/js/ui.js' %}"></script>
+
+
+
+  
+  <script type="text/javascript">
+    $(document).ready(function () {
+      
+    });
+
+    
+    
+  </script>
+  <script>
+    $(document).ready(function () {
+      $("#calendar-mini").zabuto_calendar({
+        today: true,
+        weekstartson: 0,
+        legend: [
+          {
+            type: "text",
+            label: "Meet your friends today",
+            badge: "11:30"
+                    },
+          {
+            type: "text",
+            label: "Tweet “thanks” for your followers",
+            badge: "21:00"
+                    }
+                ]
+      });
+
+      $(".legend-text").wrap("<a href='todo.html'></a>");
+    });
+  </script>
+  <script src="{% static 'dashboard/js/skycons.js' %}"></script>
+  <script>
+    var skycons = new Skycons({
+      "color": "white"
+    });
+    skycons.add("icon1", Skycons.PARTLY_CLOUDY_DAY);
+    skycons.add("icon2", Skycons.CLEAR_DAY);
+    skycons.play();
+  </script>
+  
+  <script src="{% static 'dashboard/js/TweenMax.min.js' %}"></script>
+  
+  <script src="{% static 'dashboard/js/peppermint.min.js' %}"></script>
+  <script src="{% static 'dashboard/js/calendar.js' %}"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  
+  {% get_number_domestic_mancanegara_at_year 'chart-1' year kecamatan %}
+  
+  {% get_number_tourist_per_categories_at_year 'chart-2' year kecamatan %}
+  {% get_number_tourism_per_category_per_month_domestic_mancanegara 'chart-3' 'column' year kecamatan %}
+  {% get_number_tourism_per_categories_per_month_domestic 'chart-4' 'column' year kecamatan %}
+  {% get_number_tourism_per_categories_per_month_mancanegara 'chart-5' 'column' year kecamatan %}
+  
+  
+
+</body>
+</html>
+

@@ -1,0 +1,1782 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#7266ba">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#7266ba" />
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <title>Iwiki - Dashboard</title>
+
+
+  <link rel="stylesheet" href="{% static 'dashboard/css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard/css/animate.min.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard/css/vendors/sweetalert.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard/css/vendors/loading.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard/css/vendors/chat.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard/css/bootstrap-select.css' %}" />
+
+
+
+
+<link rel="stylesheet" href="{% static 'dashboard/css/vendors/calendar-mini.css' %}">
+
+  <link rel="stylesheet" href="{% static 'dashboard/css/main.css' %}">
+  <script src="{% static 'dashboard/js/modernizr.js' %}"></script>
+
+  <link rel="icon" href="{% static 'dashboard/img/favicon.ico' %}" type="image/x-icon" />
+  <link rel="shortcut icon" href="{% static 'dashboard/img/favicon.ico' %}" type="image/x-icon" />
+
+  <!--[if lt IE 9]>
+    <script src="{% static 'dashboard/js/html5shiv.min.js' %}"></script>
+    <script src="{% static 'dashboard/js/respond.src.js' %}"></script>
+  <![endif]-->
+</head>
+
+
+
+
+<body class="nosidebar-left">
+  <div id="wrap-content" class="wrap-content">
+
+   <div class="preloader">
+        <div class="preloader-anim la-animate"></div>
+        <div class="loading-anim">Loading</div>
+    </div>
+
+
+
+
+
+    <div class="content container-fluid">
+      
+      <div class="row row-broken">
+        <div class="col-sm-6 col-md-4 col-lg-2 small-widget md-margin sm-margin xs-margin left-md m-t-md">
+          <div id="ultra1" class="decor-default inform inform-view-1 inform-1">
+            <div class="inform-value">400</div>
+            <div class="inform-name">Mentioned</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-2 small-widget md-margin sm-margin m-t-md">
+          <div id="ultra2" class="decor-default inform inform-view-1 inform-2">
+            <div class="inform-value">13140 $</div>
+            <div class="inform-name">Today Sales</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-2 small-widget md-margin left-md m-t-md p-r-none">
+          <div id="ultra3" class="decor-default inform inform-view-1 inform-3">
+            <div class="inform-value">9001</div>
+            <div class="inform-name">Today Visitors</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-2 small-widget md-margin ultra-md m-t-md">
+          <div id="ultra4" class="decor-default inform inform-view-1 inform-4">
+            <div class="inform-value">350</div>
+            <div class="inform-name">New message</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-2 small-widget left-md md-margin ultra-md m-t-md">
+          <div id="ultra5" class="decor-primary inform inform-view-2">
+            <div class="inform-value">74%</div>
+            <div class="inform-name">Loaded</div>
+            <div id="inform-1" class="inform-canvas" data-percent="74">74%</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-2 small-widget md-margin ultra-md m-t-md">
+          <div id="ultra6" class="decor-info inform inform-view-2">
+            <div class="inform-value">46%</div>
+            <div class="inform-name">New users</div>
+            <div id="inform-2" class="inform-canvas" data-percent="46">46%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row row-broken" data-height>
+        <div class="col-sm-12 col-md-6">
+          <div class="decor-default chart content-block" data-height-col>
+            <div class="p-full-md">
+            <h6 class="m-r-md m-b-md pull-left">
+                Energy predicrions
+            </h6>
+                <div class="setting f-r">
+                    <span class="refresh-btn"><i class="fa fa-refresh"></i></span>
+                    <span class="setting-btn"><i class="fa fa-cog"></i></span>
+                    <ul class="setting-popup">
+                        <li>setting 1</li>
+                        <li><a href="#">setting 2</a></li>
+                        <li>setting 3</li>
+                        <li>setting 4</li>
+                        <li>setting 5</li>
+                    </ul>
+                    <span class="close-block text-center"><i class="fa fa-close"></i></span>
+                </div>
+                <div class="clearfix"></div>
+              <div class="chart-statistics">
+                <p>Quisque volutpat condimentum velit. Class aptent taciti</p>
+                <span class="up color-primary f-l">10.360</span>
+                <span class="line color-warning f-r">total visitor <span>26.349</span></span>
+                <span class="line color-success f-r f-c">total orders <span>16.349</span></span>
+                <span class="line color-primary f-r f-c">new orders <span>16.349</span></span>
+              </div>
+            </div>
+            <div class="chart-container full">
+              <canvas id="chartLine"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6">
+          <div class="decor-default chart content-block p-full-md" data-height-col>
+            <h6 class="m-r-md m-b-md pull-left">
+                Logarithmic Axis
+            </h6>
+            <div class="setting f-r">
+                    <span class="refresh-btn"><i class="fa fa-refresh"></i></span>
+                    <span class="setting-btn"><i class="fa fa-cog"></i></span>
+                    <ul class="setting-popup">
+                        <li>setting 1</li>
+                        <li><a href="#">setting 2</a></li>
+                        <li>setting 3</li>
+                        <li>setting 4</li>
+                        <li>setting 5</li>
+                    </ul>
+                    <span class="close-block text-center"><i class="fa fa-close"></i></span>
+                </div>
+                <div class="clearfix"></div>
+            <div class="chart-statistics">
+              <span class="line color-warning f-r">total visitor <span>26.349</span></span>
+              <span class="line color-primary f-r f-c">new orders <span>16.349</span></span>
+            </div>
+            <div class="chart-container absolute">
+              <canvas id="chartBar"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row row-broken">
+        <div class="col-md-8">
+          <div class="decor-default info-tables">
+            <h6 class="p-full-md">
+                Marketing campaings
+                <span class="label label-alt label-success pull-right">28 active</span>
+            </h6>
+            <div class="row">
+              <div class="col-md-4 col-sm-6">
+                <div class="pull-left m-r-md">
+                  <span id="sparkpie" class="sparkpie"></span>
+                </div>
+                <div class="f-14">
+                  <span class="numbers"><strong class="f-18">40,556</strong><span class="color-primary"><i class="fa fa-chevron-up"></i><strong>(+ 15.5%)</strong></span></span><br>
+                  <span><span class="dot dot-primary"></span>Feb 06, 18:22am 2016</span>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="pull-left m-r-md">
+                  <span id="sparkpie2" class="sparkpie"></span>
+                </div>
+                <div class="f-14">
+                  <span class="numbers"><strong class="f-18">30,226</strong><span class="color-danger"><i class="fa fa-chevron-up"></i><strong>(+ 15.5%)</strong></span></span><br>
+                  <span><span class="dot dot-danger"></span>Feb 26, 22:22am 2016</span>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12">
+                <div class="text-right">
+                  <a href="#" class="btn btn-lg btn-info">View</a>
+                </div>
+              </div>
+            </div>
+            <div class="info-tables-container">
+              <div class="table-responsive">
+                <table class="table table-condensed zero-m">
+                  <thead>
+                    <tr>
+                      <th>Campaign</th>
+                      <th>Client</th>
+                      <th>Changes</th>
+                      <th>Budget</th>
+                      <th class="text-right">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="separator">
+                      <td colspan="5">
+                        Today
+                        <span class="pull-right">
+                          7 February 2016
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="fa-stack fa-lg pull-left f-21">
+                          <i class="fa fa-circle fa-stack-2x color-fb"></i>
+                          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <div>
+                          <span><strong>Facebook</strong></span><br>
+                          <span><span class="dot dot-primary"></span>06:00 - 08:00</span>
+                        </div>
+                      </td>
+                      <td>Mintlime</td>
+                      <td class="color-primary">+3.50%</td>
+                      <td><strong>$7,750</strong></td>
+                      <td class="text-right"><span class="label label-alt label-info">Active</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="fa-stack fa-lg pull-left f-21">
+                          <i class="fa fa-circle fa-stack-2x color-youtube"></i>
+                          <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <div>
+                          <span><strong>Youtube videos</strong></span><br>
+                          <span><span class="dot dot-danger"></span>06:00 - 08:00</span>
+                        </div>
+                      </td>
+                      <td>CDSoft</td>
+                      <td class="color-primary">+3.15%</td>
+                      <td><strong>$3,534</strong></td>
+                      <td class="text-right"><span class="label label-alt label-danger">Closed</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="fa-stack fa-lg pull-left f-21">
+                          <i class="fa fa-circle fa-stack-2x color-spotify"></i>
+                          <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <div>
+                          <span><strong>Spotify ads</strong></span><br>
+                          <span><span class="dot"></span>09:00 - 10:00</span>
+                        </div>
+                      </td>
+                      <td>Diligente</td>
+                      <td class="color-danger">-7.05%</td>
+                      <td><strong>$3,534</strong></td>
+                      <td class="text-right"><span class="label label-alt label-default">Hold</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="fa-stack fa-lg pull-left f-21">
+                          <i class="fa fa-circle fa-stack-2x color-twitter"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <div>
+                          <span><strong>Twitter ads</strong></span><br>
+                          <span><span class="dot"></span>09:00 - 10:00</span>
+                        </div>
+                      </td>
+                      <td>Deluxe</td>
+                      <td class="color-success">4.58%</td>
+                      <td><strong>$2,534</strong></td>
+                      <td class="text-right"><span class="label label-alt label-default">Hold</span></td>
+                    </tr>
+                    <tr class="separator">
+                      <td colspan="5">
+                         Yesterday
+                        <span class="pull-right">
+                          6 February 2016
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="fa-stack fa-lg pull-left f-21">
+                          <i class="fa fa-circle fa-stack-2x color-github"></i>
+                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <div>
+                          <span><strong>Github</strong></span><br>
+                          <span><span class="dot dot-success"></span>09:00 - 10:00</span>
+                        </div>
+                      </td>
+                      <td>Metrics</td>
+                      <td class="color-danger">-7.05%</td>
+                      <td><strong>$950</strong></td>
+                      <td class="text-right"><span class="label label-alt label-success">Pending</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="fa-stack fa-lg pull-left f-21">
+                          <i class="fa fa-circle fa-stack-2x color-amazon"></i>
+                          <i class="fa fa-amazon fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <div>
+                          <span><strong>Amazon ads</strong></span><br>
+                          <span><span class="dot dot-danger"></span>09:00 - 10:00</span>
+                        </div>
+                      </td>
+                      <td>Blueish</td>
+                      <td class="color-success">5.05%</td>
+                      <td><strong>$1,950</strong></td>
+                      <td class="text-right"><span class="label label-alt label-info">Active</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="fa-stack fa-lg pull-left f-21">
+                          <i class="fa fa-circle fa-stack-2x color-dribbble"></i>
+                          <i class="fa fa-dribbble fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <div>
+                          <span><strong>Dribbble ads</strong></span><br>
+                          <span><span class="dot dot-info"></span>09:00 - 10:00</span>
+                        </div>
+                      </td>
+                      <td>Teamable</td>
+                      <td class="color-danger">-8.05%</td>
+                      <td><strong>$5,980</strong></td>
+                      <td class="text-right"><span class="label label-alt label-danger">Closed</span></td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="decor-default">
+            <h6 class="p-full-md">
+                Messages
+                <span class="pull-right"><small class="hidden-xs">Feb 06, 22:22am</small>
+                <span class="label label-alt label-success m-l-md">23 active</span></span>
+            </h6>
+
+            <div class="message-stats clearfix">
+              <div>
+                <span class="f-18"><i class="fa fa-calendar-o color-primary"></i> <strong>652</strong></span><br>
+                <span class="f-14">this week</span>
+              </div>
+              <div>
+                <span class="f-18"><i class="fa fa-calendar-check-o color-primary"></i> <strong>3,244</strong></span><br>
+                <span class="f-14">this month</span>
+              </div>
+              <div>
+                <span class="f-18"><i class="fa fa-file-text color-primary"></i> <strong>22,100</strong></span><br>
+                <span class="f-14">all messages</span>
+              </div>
+            </div>
+
+            <div class="chart-container min">
+              <canvas id="chartLine2"></canvas>
+            </div>
+
+            <div class="message-tabs">
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs nav-justified" role="tablist">
+                <li role="presentation" class="active"><a href="#tue" aria-controls="tue" role="tab" data-toggle="tab">Tuesday</a></li>
+                <li role="presentation"><a href="#mon" aria-controls="mon" role="tab" data-toggle="tab">Monday</a></li>
+                <li role="presentation"><a href="#fri" aria-controls="fri" role="tab" data-toggle="tab">Friday</a></li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="tue">
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40.png' %}" class="img-circle" alt="avatar"><span class="message-count decor-danger">9</span></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Alexander Herthic</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"><span class="message-count decor-danger">7</span></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">12:05</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="mon">
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40.png' %}" class="img-circle" alt="avatar"><span class="message-count decor-danger">6</span></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Alexander Herthic</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"><span class="message-count decor-danger">2</span></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">12:05</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="fri">
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40.png' %}" class="img-circle" alt="avatar"><span class="message-count decor-danger">3</span></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Alexander Herthic</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"><span class="message-count decor-danger">4</span></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">12:05</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                  <a href="#" class="item clearfix">
+                   <div class="pull-left img-container"><img src="{% static 'dashboard/img/images/profile/40-2.png' %}" class="img-circle" alt="avatar"></div>
+                   <div class="f-14  message-excerpt">
+                     <span class="color-info "><strong>Katerina Angintiew</strong></span><span class="pull-right">15:50</span><br>
+                     Lorem ipsum dolor sit amet, consectetur.
+                   </div>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row row-broken" data-height>
+        <div class="col-md-4">
+          <div class="decor-default" data-height-col>
+            <h6 class="p-full-md">
+              Members
+            </h6>
+            <div class="p-r-md p-l-md p-b-md members-widget">
+              <a href="profile.html" class="clearfix">
+                <div class="profile-avatar pull-left">
+                  <img src="{% static 'dashboard/img/images/profile/64.png' %}" alt="image" class="img-circle">
+                  <span class="online"></span>
+                </div>
+                <div>
+                  <strong>Alexander Herthic</strong><br>
+                  Musician, Player
+                </div>
+              </a>
+
+              <a href="profile.html" class="clearfix">
+                <div class="profile-avatar pull-left">
+                  <img src="{% static 'dashboard/img/images/profile/64-2.png' %}" alt="image" class="img-circle">
+                  <span class="online"></span>
+                </div>
+                <div>
+                  <strong>Katya Angintiew</strong><br>
+                  Blogger
+                </div>
+              </a>
+
+              <a href="profile.html" class="clearfix">
+                <div class="profile-avatar pull-left">
+                  <img src="{% static 'dashboard/img/images/profile/64.png' %}" alt="image" class="img-circle">
+                  <span class="danger"></span>
+                </div>
+                <div>
+                  <strong>Alexander Herthic</strong><br>
+                  Writter
+                </div>
+              </a>
+
+              <a href="profile.html" class="clearfix">
+                <div class="profile-avatar pull-left">
+                  <img src="{% static 'dashboard/img/images/profile/64-2.png' %}" alt="image" class="img-circle">
+                  <span class="danger"></span>
+                </div>
+                <div>
+                  <strong>Katya Angintiew</strong><br>
+                  Designer
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="decor-default" data-height-col>
+            <h6 class="p-full-md">
+              Tasks <br>
+              <small>17 finished, 7 remaining</small>
+            </h6>
+            <div class="p-r-md p-l-md p-b-md">
+              <ul class="task-widget">
+                <li>7:30 <br> Lorem ipsum <a href="#"><strong>dolor</strong></a> sit amet, consectetur.</li>
+                <li><span class="dot dot-info"></span>7:30 <br> Lorem ipsum dolor sit amet, consectetur.</li>
+                <li><span class="dot dot-danger"></span>7:30 <br> <a href="#"><strong>Lorem ipsum</strong></a> dolor sit amet, <a href="#"><strong>consectetur</strong></a>.</li>
+                <li class="zero-p"><span class="top"></span></li>
+                <li class="zero-p"><span class="bottom"></span></li>
+              </ul>
+              <div class="clearfix task-btns">
+                <button type="button" class="btn btn-default" onClick="window.location.reload()">More</button>
+                <button type="button" class="btn btn-warning" onClick="window.location.reload()">Add one</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="decor-default" data-height-col>
+            <h6 class="p-full-md">
+             <span class="label label-alt label-success pull-right">7</span>
+              Activity <br>
+              <small>15 members update their activities</small>
+            </h6>
+            <div class="p-r-md p-l-md p-b-md activity-widget">
+              <ul class="task-widget">
+                <li>
+                  <img src="{% static 'dashboard/img/images/profile/40.png' %}" alt="image" class="img-circle">
+                  <span class="color-primary"><strong>Alexander Herthic</strong></span> 5 min ago <br>
+                  Writter, Mag Editor
+                </li>
+                <li>
+                  <img src="{% static 'dashboard/img/images/profile/40-2.png' %}" alt="image" class="img-circle">
+                  <span class="color-primary"><strong>Katya Angintiew</strong></span> 13 min ago <br>
+                  Blogger
+                </li>
+                <li>
+                  <img src="{% static 'dashboard/img/images/profile/40.png' %}" alt="image" class="img-circle">
+                  <span class="color-primary"><strong>Alexander Herthic</strong></span> 35 min ago <br>
+                  Musician
+                </li>
+              </ul>
+              <button type="button" class="btn btn-default" onClick="window.location.reload()">More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row row-broken" data-height>
+        <div class="col-md-6">
+          <div class="decor-default" data-height-col>
+            <h6 class="p-full-md">
+              Open Project <span class="label label-alt label-danger pull-right">9</span><br>
+              <small>Your data status</small>
+            </h6>
+            <div class="p-r-md p-l-md p-b-md">
+              <div class="project-item clearfix">
+                <div class="project-item-tag decor-primary pull-left">
+                  <i class="fa fa-google fa-inverse"></i>
+                </div>
+                <div class="f-14 pull-left">
+                  <strong>Broadcast web app mockup</strong><br>
+                  5 tasks, 3 issues
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-lg btn-success hidden-xs">Manage</a>
+                  <a href="#" class="edit"><i class="fa fa-pencil"></i></a>
+                </div>
+              </div>
+              <div class="project-item clearfix">
+                <div class="project-item-tag decor-success pull-left">
+                  <i class="fa fa-steam fa-inverse"></i>
+                </div>
+                <div class="f-14 pull-left">
+                  <strong>Steam for Android</strong><br>
+                  35 tasks, 6 issues
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-lg btn-success hidden-xs">Manage</a>
+                  <a href="#" class="edit"><i class="fa fa-pencil"></i></a>
+                </div>
+              </div>
+              <div class="project-item clearfix">
+                <div class="project-item-tag decor-warning pull-left">
+                  <i class="fa fa-hashtag fa-inverse"></i>
+                </div>
+                <div class="f-14 pull-left">
+                  <strong>#Hashtag android app</strong><br>
+                  52 tasks, 13 issues
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-lg btn-success hidden-xs">Manage</a>
+                  <a href="#" class="edit"><i class="fa fa-pencil"></i></a>
+                </div>
+              </div>
+              <div class="project-item clearfix">
+                <div class="project-item-tag decor-info pull-left">
+                  <i class="fa fa-pinterest fa-inverse"></i>
+                </div>
+                <div class="f-14 pull-left">
+                  <strong>Pinterest campaign</strong><br>
+                  6 tasks, 23 issues
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-lg btn-success hidden-xs">Manage</a>
+                  <a href="#" class="edit"><i class="fa fa-pencil"></i></a>
+                </div>
+              </div>
+              <div class="project-item clearfix">
+                <div class="project-item-tag decor-info pull-left">
+                  <i class="fa fa-facebook fa-inverse"></i>
+                </div>
+                <div class="f-14 pull-left">
+                  <strong>Facebook application</strong><br>
+                  30 tasks, 5 issues
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-lg btn-success hidden-xs">Manage</a>
+                  <a href="#" class="edit"><i class="fa fa-pencil"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="decor-default" data-height-col>
+            <h6 class="p-full-md">
+              Recent orders <a href="#" class="label label-alt label-success pull-right no-decor">View all</a><br>
+              <small>Use the button on element</small>
+            </h6>
+            <div class="p-r-md p-l-md p-b-md">
+              <div class="table-responsive">
+                <table class="table table-condensed zero-m">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th><strong>Item Name</strong></th>
+                      <th><strong>Up-Down</strong></th>
+                      <th class="text-right"><strong>Manage</strong></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <span id="sparkchart-3"></span>
+                      </td>
+                      <td class="text-center"><img src="{% static 'dashboard/img/iphone.png' %}" alt="iphone"></td>
+                      <td>Apple Iphone</td>
+                      <td class="color-success">$400</td>
+                      <td class="text-right manage-orders">
+                        <a href="#"><i class="fa fa-pencil"></i></a>
+                        <a href="#"><i class="fa fa-close"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span id="sparkchart-4"></span>
+                      </td>
+                      <td class="text-center"><img src="{% static 'dashboard/img/samsung.png' %}" alt="samsung"></td>
+                      <td>Samsung Phone</td>
+                      <td class="color-danger">$450</td>
+                      <td class="text-right manage-orders">
+                        <a href="#"><i class="fa fa-pencil"></i></a>
+                        <a href="#"><i class="fa fa-close"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span id="sparkchart-5"></span>
+                      </td>
+                      <td class="text-center"><img src="{% static 'dashboard/img/lumia.png' %}" alt="lumia"></td>
+                      <td>Microsoft Lumia</td>
+                      <td class="color-success">$150</td>
+                      <td class="text-right manage-orders">
+                        <a href="#"><i class="fa fa-pencil"></i></a>
+                        <a href="#"><i class="fa fa-close"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span id="sparkchart-6"></span>
+                      </td>
+                      <td class="text-center"><img src="{% static 'dashboard/img/macbook.png' %}" alt="macbook"></td>
+                      <td>Macbook Pro</td>
+                      <td class="color-danger">$1400</td>
+                      <td class="text-right manage-orders">
+                        <a href="#"><i class="fa fa-pencil"></i></a>
+                        <a href="#"><i class="fa fa-close"></i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row row-broken" data-height>
+        <div class="col-sm-12 col-md-4">
+          <div class="chart-mini chart-mini-3 decor-primary" data-height-col>
+            <div class="legend-top p-full-md">
+              <div class="name f-l">Eneergy Predictions</div>
+              <div class="value f-r">$14.360</div>
+              <div class="description f-c p-t-md">Last Sale 23.45 USD</div>
+            </div>
+            <div class="chart-container-mini">
+              <canvas id="chart-mini-3" class="chart-body"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4">
+          <div class="chart-mini chart-mini-4 decor-success" data-height-col>
+            <div class="legend-top p-full-md">
+              <div class="name f-l">Eneergy Predictions</div>
+              <div class="value f-r">$14.360</div>
+              <div class="description f-c p-t-md">2% higher than last month</div>
+            </div>
+            <div class="chart-container-mini">
+              <canvas id="chart-mini-4" class="chart-body"></canvas>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-12 col-md-4">
+          <div class="chart-mini chart-mini-5 decor-warning" data-height-col>
+            <div class="legend-top p-full-md">
+              <div class="name f-l">Eneergy Predictions</div>
+              <div class="value f-r">$14.360</div>
+              <div class="description f-c p-t-md">2% higher than last month</div>
+            </div>
+            <div class="chart-container-mini full absolute">
+              <canvas id="chart-mini-5" class="chart-body"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row row-broken" data-height>
+        <div class="col-sm-12 col-md-6">
+          <div class="decor-default chart content-block p-full-md" data-height-col>
+            <h6 class="m-r-md m-b-md pull-left">
+                Statistics
+            </h6>
+            <div class="setting f-r">
+                    <span class="refresh-btn"><i class="fa fa-refresh"></i></span>
+                    <span class="setting-btn"><i class="fa fa-cog"></i></span>
+                    <ul class="setting-popup">
+                        <li>setting 1</li>
+                        <li><a href="#">setting 2</a></li>
+                        <li>setting 3</li>
+                        <li>setting 4</li>
+                        <li>setting 5</li>
+                    </ul>
+                    <span class="close-block text-center"><i class="fa fa-close"></i></span>
+                </div>
+                <div class="clearfix"></div>
+            <div class="chart-stat-1 p-full-md text-center">
+              <div class="unit">
+                <div class="h">OVERALL VIEWS</div>
+                <h5 class="color-warning">$ 657,212</h5>
+                <h5 class="color-warning delta down">7%</h5>
+              </div>
+              <div class="unit">
+                <div class="h">MY BALANCE</div>
+                <h5 class="color-info">$ 657,212</h5>
+                <h5 class="color-info delta up">1%</h5>
+              </div>
+              <div class="unit">
+                <div class="h">NEW ORDERS</div>
+                <h5 class="color-primary">$ 65,721</h5>
+                <h5 class="color-primary delta up">44%</h5>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="chart-container absolute">
+              <canvas id="cl1" class="view-2"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6">
+          <div class="decor-default chart content-block" data-height-col>
+            <h6 class="m-r-md m-t-md m-b-md m-l-md pull-left">
+                Energy Predictions
+            </h6>
+                <div class="setting f-r m-t-md m-r-md">
+                    <span class="refresh-btn"><i class="fa fa-refresh"></i></span>
+                    <span class="setting-btn"><i class="fa fa-cog"></i></span>
+                    <ul class="setting-popup">
+                        <li>setting 1</li>
+                        <li><a href="#">setting 2</a></li>
+                        <li>setting 3</li>
+                        <li>setting 4</li>
+                        <li>setting 5</li>
+                    </ul>
+                    <span class="close-block text-center"><i class="fa fa-close"></i></span>
+                </div>
+                <div class="clearfix"></div>
+            <div class="chart-stat-2">
+              <div class="unit">
+                Total usage
+                <h5 class="color-success">21,463 KB</h5>
+              </div>
+              <div class="unit">
+                Cerrently
+                <h5 class="color-primary">21,463 KB</h5>
+              </div>
+              <div class="unit">
+                Average
+                <h5 class="color-warning">21,463 KB</h5>
+              </div>
+              <br/>
+              <br/>
+              <br/>
+              <div class="unit-group">
+                <div class="unit">Mai App</div>
+                <div class="unit">234,678 uers are using</div>
+                <div class="unit">35,65 KB</div>
+              </div>
+              <div class="unit-group">
+                <div class="unit">Calendar</div>
+                <div class="unit">234,678 uers are using</div>
+                <div class="unit">35,65 KB</div>
+              </div>
+            </div>
+            <div class="chart-container full">
+              <canvas id="cl2" class="view-1"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row row-broken" data-height>
+        <div class="col-sm-12 col-md-4">
+          <div class="team decor-default p-full-md" data-height-col>
+            <h6>Team</h6>
+
+            <div class="team-body peppermint">
+              <div class="list active">
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64-3.png' %}" alt="team" />
+                  <span>Joh</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64.png' %}" alt="team" />
+                  <span>Gerard</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/female/64-8.png' %}" alt="team" />
+                  <span>Anna</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64-4.png' %}" alt="team" />
+                  <span>John</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64.png' %}" alt="team" />
+                  <span>Gerard</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/female/64-7.png' %}" alt="team" />
+                  <span>Olga</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64-4.png' %}" alt="team" />
+                  <span>John</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64.png' %}" alt="team" />
+                  <span>Gerard</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/female/64-6.png' %}" alt="team" />
+                  <span>Kate</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64-3.png' %}" alt="team" />
+                  <span>John</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64.png' %}" alt="team" />
+                  <span>Gerard</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/female/64-5.png' %}" alt="team" />
+                  <span>Vicky</span>
+                </a>
+              </div>
+              <div class="list active">
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64-3.png' %}" alt="team" />
+                  <span>Joh</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64.png' %}" alt="team" />
+                  <span>Gerard</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/female/64-8.png' %}" alt="team" />
+                  <span>Anna</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64-4.png' %}" alt="team" />
+                  <span>John</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64.png' %}" alt="team" />
+                  <span>Gerard</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/female/64-7.png' %}" alt="team" />
+                  <span>Olga</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64-4.png' %}" alt="team" />
+                  <span>John</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64.png' %}" alt="team" />
+                  <span>Gerard</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/female/64-6.png' %}" alt="team" />
+                  <span>Kate</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64-3.png' %}" alt="team" />
+                  <span>John</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64.png' %}" alt="team" />
+                  <span>Gerard</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/female/64-5.png' %}" alt="team" />
+                  <span>Vicky</span>
+                </a>
+              </div>
+              <div class="list active">
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64-3.png' %}" alt="team" />
+                  <span>Joh</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64.png' %}" alt="team" />
+                  <span>Gerard</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/female/64-8.png' %}" alt="team" />
+                  <span>Anna</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64-4.png' %}" alt="team" />
+                  <span>John</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64.png' %}" alt="team" />
+                  <span>Gerard</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/female/64-7.png' %}" alt="team" />
+                  <span>Olga</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64-4.png' %}" alt="team" />
+                  <span>John</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64.png' %}" alt="team" />
+                  <span>Gerard</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/female/64-6.png' %}" alt="team" />
+                  <span>Kate</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64-3.png' %}" alt="team" />
+                  <span>John</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/male/64.png' %}" alt="team" />
+                  <span>Gerard</span>
+                </a>
+                <a href="profile.html">
+                  <img src="{% static 'dashboard/img/images/team/female/64-5.png' %}" alt="team" />
+                  <span>Vicky</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="team-nav">
+              <span class="active"></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4">
+          <div class="developing p-full-md decor-default" data-height-col>
+            <h6>Time to design</h6>
+            <div class="field-group color-primary f-c">
+              <div class="field-1 f-l">
+                23.4<sup>h</sup>
+                <div class="field-1-sub">Design</div>
+              </div>
+              <div class="field-2 f-r">
+                <span class="delta up">4%</span>
+                <div class="field-2-sub">above avg.</div>
+              </div>
+            </div>
+            <div class="field-group color-warning f-c">
+              <div class="field-1 f-l">
+                38<sup>h</sup>
+                <div class="field-1-sub">Front-end</div>
+              </div>
+              <div class="field-2 f-r">
+                <span class="delta down">7%</span>
+                <div class="field-2-sub">below avg.</div>
+              </div>
+            </div>
+            <div class="field-group color-success f-c">
+              <div class="field-1 f-l">
+                45.5<sup>h</sup>
+                <div class="field-1-sub">Back-end</div>
+              </div>
+              <div class="field-2 f-r">
+                <span class="delta down">2%</span>
+                <div class="field-2-sub">below avg.</div>
+              </div>
+            </div>
+            <div class="field-group color-info f-c">
+              <div class="field-1 f-l">
+                107<sup>h</sup>
+                <div class="field-1-sub">Total hours</div>
+              </div>
+              <div class="field-2 f-r">
+                <span class="delta up">1%</span>
+                <div class="field-2-sub">above avg.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4" data-height-col>
+          <div class="weather view-2 decor-warning p-full-md">
+            <div class="weather-location">Amman</div>
+            <div class="weather-icon-name">Sunny</div>
+            <canvas class="weather-icon" id="icon2" width="128" height="128"></canvas>
+            <div class="weather-degree">44°</div>
+          </div>
+          <div id="calendar-mini" class="decor-default p-full-md m-t-md"></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+  © 2015 Copyright.
+  <ul class="footer-menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Reports</a></li>
+      <li><a href="#">Support</a></li>
+      <li><a href="#">Contact</a></li>
+  </ul>
+</div>
+
+  </div>
+
+  <div id="wrap-menu" class="wrap-menu">
+  <span id="menu-btn-close" class="menu-btn-close">
+
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 28 28"  xml:space="preserve">
+        <g id="icon-close">
+          <line x1="2" y1="2" x2="26" y2="26" />
+          <line x1="2" y1="26" x2="26" y2="2" />
+        </g>
+      </svg>
+  </span>
+  <h1 class="menu-title">Navigation</h1>
+  <ul id="menu" class="menu">
+    <li id="menu-btn-back" class="back">
+      <span>Back</span>
+    </li>
+    <li>
+        <i class="fa fa-circle more"></i>
+       <i class="fa fa-globe"></i>
+      <span>Dashboards</span>
+      <ul class="menu">
+        <li><i class="fa fa-hashtag"></i><a href="index.html">Dashboard v1</a></li>
+        <li><i class="fa fa-cube"></i><a href="dashboard2.html">Dashboard v2</a></li>
+      </ul>
+    </li>
+
+    <li><i class="fa fa-font"></i><a href="typography.html">Typography</a></li>
+
+    <li>
+     <i class="fa fa-circle more"></i>
+     <i class="fa fa-desktop"></i>
+      <span>Ui Kits</span>
+      <ul class="menu">
+        <li><i class="fa fa-code-fork"></i><span class="label label-alt label-xs label-success">New!</span><a href="blocks.html">Blocks</a></li>
+        <li><i class="fa fa-square"></i><span class="label label-alt label-xs label-success">New!</span><a href="box-shadow.html">Box-shadow</a></li>
+        <li><i class="fa fa-briefcase"></i><a href="buttons.html">Buttons</a></li>
+        <li><i class="fa fa-check-circle-o"></i><a href="checkboxes.html">Checkboxes</a></li>
+        <li><i class="fa fa-check-circle"></i><span class="label label-alt label-xs label-success">New!</span><a href="checkboxes2.html">Checkboxes v2</a></li>
+        <li><i class="fa fa-diamond"></i><a href="dialogs.html">Dialogs</a></li>
+        <li><i class="fa fa-check-circle-o"></i><span class="label label-alt label-xs label-success">New!</span><a href="dialog-notification.html">Dialog notification</a></li>
+        <li><i class="fa fa-object-group"></i><span class="label label-alt label-xs label-success">New!</span><a href="general_ui.html">General UI</a></li>
+        <li><i class="fa fa-code"></i><a href="grid.html">Grid Options</a></li>
+        <li><i class="fa fa-usb"></i><span class="label label-alt label-xs label-success">New!</span><a href="icons.html">Icons</a></li>
+        <li><i class="fa fa-tags"></i><span class="label label-alt label-xs label-success">New!</span><a href="labels.html">Labels</a></li>
+        <li><i class="fa fa-spinner"></i><a href="loading.html">Loading effect</a></li>
+        <li><i class="fa fa-bell"></i><a href="notification.html">Notifications</a></li>
+        <li><i class="fa fa-columns"></i><span class="label label-alt label-xs label-success">New!</span><a href="panels.html">Panels</a></li>
+        <li><i class="fa fa-magic"></i><a href="wizard.html">Wizard</a></li>
+      </ul>
+    </li>
+
+    <li>
+       <i class="fa fa-circle more"></i>
+       <i class="fa fa-th"></i>
+      <span>Forms</span>
+      <ul class="menu">
+        <li><i class="fa fa-folder-open-o"></i><span class="label label-alt label-xs label-success">New!</span><a href="form-components.html">Form components</a></li>
+        <li><i class="fa fa-share"></i><span class="label label-alt label-xs label-success">New!</span><a href="form-elements.html">Form Elements</a></li>
+        <li><i class="fa fa-database"></i><span class="label label-alt label-xs label-success">New!</span><a href="form-examples.html">Form Examples</a></li>
+        <li><i class="fa fa-compass"></i><span class="label label-alt label-xs label-success">New!</span><a href="form-validation.html">Form Validation</a></li>
+        <li><i class="fa fa-keyboard-o"></i><a href="input.html">Input Fields</a></li>
+      </ul>
+    </li>
+
+    <li>
+       <i class="fa fa-circle more"></i>
+       <i class="fa fa-paint-brush"></i>
+      <span>Colors</span>
+      <ul class="menu">
+        <li><i class="fa fa-paint-brush"></i><a href="index.html">Default Skin</a></li>
+        <li><i class="fa fa-paint-brush"></i><a href="index-light.html">Light Skin</a></li>
+        <li><i class="fa fa-paint-brush"></i><a href="index-dark.html">Dark Skin</a></li>
+        <li><i class="fa fa-paint-brush"></i><a href="index-dim.html">Dim Skin</a></li>
+      </ul>
+    </li>
+
+    <li>
+       <i class="fa fa-circle more"></i>
+       <i class="fa fa-pencil"></i>
+      <span>Editors</span>
+      <ul class="menu">
+        <li><i class="fa fa-pencil"></i><span class="label label-alt label-xs label-success">New!</span><a href="bootstrap-wysiwyg.html">Bootstrap Wysiwyg</a></li>
+        <li><i class="fa fa-pencil"></i><span class="label label-alt label-xs label-success">New!</span><a href="summernote.html">Summernote</a></li>
+        <li><i class="fa fa-pencil"></i><span class="label label-alt label-xs label-success">New!</span><a href="tinymce.html">TinyMCE</a></li>
+      </ul>
+    </li>
+
+    <li>
+     <i class="fa fa-circle more"></i>
+     <i class="fa fa-envelope-o"></i>
+      <span>E-mail</span>
+      <ul class="menu">
+        <li><i class="fa fa-list-ul"></i><a href="email-list.html">Email list</a></li>
+        <li><i class="fa fa-inbox"></i><a href="email-inbox.html">Email inbox</a></li>
+        <li><i class="fa fa-paper-plane-o"></i><a href="email-send.html">Email send</a></li>
+      </ul>
+    </li>
+
+    <li>
+       <i class="fa fa-circle more"></i>
+       <i class="fa fa-server"></i>
+      <span>Contacts</span>
+      <ul class="menu">
+        <li><i class="fa fa-mobile"></i><a href="contacts.html">Contact list</a></li>
+        <li><i class="fa fa-phone"></i><a href="contact.html">Contact preview</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <i class="fa fa-th-list"></i>
+      <a href="widgets.html">Widgets</a>
+    </li>
+
+    <li>
+       <i class="fa fa-circle more"></i>
+       <i class="fa fa-music"></i>
+      <span>Media</span>
+      <ul class="menu">
+        <li><i class="fa fa-crop"></i><a href="crop.html">Crop</a></li>
+        <li><i class="fa fa-picture-o"></i><a href="gallery.html">Gallery</a></li>
+        <li><i class="fa fa-camera-retro"></i><a href="slider.html">Sliders</a></li>
+      </ul>
+    </li>
+
+    <li>
+       <i class="fa fa-circle more"></i>
+       <i class="fa fa-table"></i>
+      <span>Tables</span>
+      <ul class="menu">
+        <li><i class="fa fa-th"></i><span class="label label-alt label-xs label-success">New!</span><a href="tables.html">Tables</a></li>
+        <li><i class="fa fa-table"></i><span class="label label-alt label-xs label-success">New!</span><a href="datatables.html">Datatables</a></li>
+        <li><i class="fa fa-expand"></i><span class="label label-alt label-xs label-success">New!</span><a href="responsive-table.html">Responsive table</a></li>
+      </ul>
+    </li>
+
+    <li>
+       <i class="fa fa-circle more"></i>
+       <i class="fa fa-newspaper-o"></i>
+      <span>News</span>
+      <ul class="menu">
+        <li><i class="fa fa-newspaper-o"></i><span class="label label-alt label-xs label-success">New!</span><a href="news.html">News</a></li>
+        <li><i class="fa fa-newspaper-o"></i><span class="label label-alt label-xs label-success">New!</span><a href="news-v2.html">News-v2</a></li>
+        <li><i class="fa fa-newspaper-o"></i><span class="label label-alt label-xs label-success">New!</span><a href="news-v3.html">News-v3</a></li>
+        <li><i class="fa fa-newspaper-o"></i><span class="label label-alt label-xs label-success">New!</span><a href="news-v4.html">News-v4</a></li>
+      </ul>
+    </li>
+
+    <li>
+       <i class="fa fa-circle more"></i>
+       <i class="fa fa-key"></i>
+      <span>Sample pages</span>
+      <ul class="menu">
+        <li><i class="fa fa-calendar"></i><a href="calendar.html">Calendar</a></li>
+        <li><i class="fa fa-comment-o"></i><a href="chat.html">Chat</a></li>
+        <li><i class="fa fa-sliders"></i><a href="filter.html">Filter</a></li>
+        <li><i class="fa fa-clock-o"></i><a href="timeline.html">Timeline</a></li>
+        <li><i class="fa fa-list-ul"></i><a href="todo.html">Todo</a></li>
+        <li><i class="fa fa-sign-in"></i><a href="login.html">Log in</a></li>
+        <li><i class="fa fa-unlock-alt"></i><a href="lostpassword.html">Recovery password</a></li>
+        <li><i class="fa fa-book"></i><a href="register.html">Register</a></li>
+        <li><i class="fa fa-user"></i><a href="profile.html">Profile</a></li>
+        <li><i class="fa fa-flag"></i><span class="label label-alt label-xs label-success">New!</span><a href="timer.html">Timer</a></li>
+        <li><i class="fa fa-flag"></i><span class="label label-alt label-xs label-success">New!</span><a href="timer2.html">Timer 2</a></li>
+      </ul>
+    </li>
+
+    <li>
+     <i class="fa fa-circle more"></i>
+     <i class="fa fa-exclamation-triangle"></i>
+      <span>Error pages</span>
+      <ul class="menu">
+        <li><i class="fa fa-exclamation-triangle"></i><a href="403.html">403</a></li>
+        <li><i class="fa fa-exclamation-triangle"></i><a href="404.html">404</a></li>
+        <li><i class="fa fa-exclamation-triangle"></i><a href="500.html">500</a></li>
+      </ul>
+    </li>
+
+    <li>
+     <i class="fa fa-circle more"></i>
+     <i class="fa fa-file"></i>
+      <span>Layouts</span>
+      <ul class="menu">
+        <li><i class="fa fa-file"></i><span class="label label-alt label-xs label-success">New!</span><a href="blank.html">Blank page</a></li>
+        <li><i class="fa fa-file"></i><span class="label label-alt label-xs label-success">New!</span><a href="nosidebar-left.html">No left sidebar</a></li>
+        <li><i class="fa fa-file"></i><span class="label label-alt label-xs label-success">New!</span><a href="nosidebar-right.html">No right sidebar</a></li>
+        <li><i class="fa fa-file"></i><span class="label label-alt label-xs label-success">New!</span><a href="nosidebars.html">No both sidebars</a></li>
+        <li><i class="fa fa-file"></i><span class="label label-alt label-xs label-success">New!</span><a href="boxed.html">Boxed layout</a></li>
+      </ul>
+    </li>
+
+    <li>
+     <i class="fa fa-area-chart"></i>
+      <a href="charts.html">Charts</a>
+    </li>
+
+    <li>
+     <i class="fa fa-flask"></i>
+     <span class="label label-alt label-xs label-success">New!</span>
+      <a href="generic-classes.html">Generic classes</a>
+    </li>
+  </ul>
+</div>
+
+<div id="overlay" class="overlay"></div>
+
+
+
+  
+    <script src="{% static 'dashboard/js/jquery.js' %}"></script>
+    <script src="{% static 'dashboard/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'dashboard/js/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static 'dashboard/js/classie.js' %}"></script>
+    <script src="{% static 'dashboard/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'dashboard/js/search.js' %}"></script>
+    <script src="{% static 'dashboard/js/sweetalert.min.js' %}"></script>
+    <script src="{% static 'dashboard/js/moment.min.js' %}"></script>
+    <script src="{% static 'dashboard/js/polyfill.object-fit.min.js' %}"></script>
+
+    <script src="{% static 'dashboard/js/ui.js' %}"></script>
+
+
+
+  <script src="{% static 'dashboard/js/jquery.easypiechart.min.js' %}"></script>
+  <script src="{% static 'dashboard/js/jquery.sparkline.min.js' %}"></script>
+  <script src="{% static 'dashboard/js/calendar.js' %}"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#inform-1').easyPieChart({
+        barColor: '#f2a654',
+        trackColor: '#585b9c',
+        scaleColor: false,
+        lineWidth: 6,
+        size: 60,
+        animate: 1000
+      });
+      $('#inform-2').easyPieChart({
+        barColor: '#7266ba',
+        trackColor: '#34aed4',
+        scaleColor: false,
+        lineWidth: 6,
+        size: 60,
+        animate: 1000
+      });
+    });
+  </script>
+  <script src="{% static 'dashboard/js/chart.js' %}"></script>
+  <script>
+    Chart.defaults.global.animationEasing = "easeOutBounce";
+    Chart.defaults.global.pointLabelFontSize = 12;
+    Chart.defaults.global.responsive = true;
+    Chart.defaults.global.maintainAspectRatio = false;
+
+    var lineChartData = {
+      labels: [1, 2, 3, 4, 5, 6, 7],
+      datasets: [
+        {
+          label: "Default",
+          fillColor: "#7266ba",
+          strokeColor: "#7266ba",
+          pointColor: "#7266ba",
+          data: [23, 41, 35, 48, 45, 34, 37]
+                },
+        {
+          label: "Success",
+          fillColor: "#46be8a",
+          strokeColor: "#46be8a",
+          pointColor: "#46be8a",
+          data: [13, 35, 30, 43, 37, 27, 30]
+                },
+        {
+          label: "Warning",
+          fillColor: "#f2a654",
+          strokeColor: "#f2a654",
+          pointColor: "#f2a654",
+          data: [10, 21, 24, 34, 26, 17, 20]
+                },
+            ]
+    }
+
+    var lineChartData2 = {
+      labels: [1, 2, 3, 4, 5, 6, 7],
+      datasets: [
+        {
+          label: "Default",
+          fillColor: "#7266ba",
+          strokeColor: "#7266ba",
+          pointColor: "#7266ba",
+          data: [23, 41, 35, 48, 45, 34, 37]
+                }
+            ]
+    }
+
+
+
+    var ctxLine = document.getElementById("chartLine").getContext("2d");
+    var latestLabel = lineChartData.labels[6];
+
+    var myLiveChart = new Chart(ctxLine).Line(lineChartData, {animation: true, animationSteps: 1, showScale: false, pointDot: false});
+
+
+    setInterval(function(){
+      // Add two random numbers for each dataset
+      myLiveChart.addData([Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)], ++latestLabel);
+      // Remove the first point so we dont just add values forever
+      myLiveChart.removeData();
+    }, 1500);
+
+    var barChartData = {
+      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      datasets: [
+        {
+          fillColor: "#7266ba",
+          highlightFill: "#585b9c",
+          data: [10, 21, 58, 64, 21, 35, 55]
+                },
+        {
+          fillColor: "#f2a654",
+          highlightFill: "#f2a654",
+          data: [13, 25, 10, 68, 10, 2, 46]
+                }
+            ]
+
+    }
+    var cm3Data = {
+      labels: ["1", "2", "3", "4", "5", "6", "7"],
+      datasets: [
+        {
+          label: "Default",
+          fillColor: "transparent",
+          strokeColor: "#ffffff",
+          pointColor: "#7266ba",
+          pointStrokeColor: "#ffffff",
+          data: [5, 0, 10, 20, 15, 20, 20]
+                }
+            ]
+    };
+    var cm4Data = {
+      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      datasets: [
+        {
+          fillColor: "#ffffff",
+          highlightFill: "#7266ba",
+          data: [10, 21, 58, 64, 21, 35, 55]
+                }
+            ]
+
+    };
+    var cm5Data = {
+      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      datasets: [
+        {
+          label: "Default",
+          fillColor: "#7266ba",
+          strokeColor: "#7266ba",
+          pointColor: "#7266ba",
+          data: [23, 41, 35, 48, 45, 34, 37]
+                }
+            ]
+    };
+    var cl1Data = {
+      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      datasets: [
+        {
+          label: "Default",
+          fillColor: "transparent",
+          strokeColor: "#39bee8",
+          pointColor: "#39bee8",
+          data: [5, 10, 15, 25, 22, 20, 25]
+                },
+        {
+          label: "Success",
+          fillColor: "transparent",
+          strokeColor: "#f2a654",
+          pointColor: "#f2a654",
+          data: [0, 5, 8, 17, 20, 28, 21]
+                },
+        {
+          label: "Success",
+          fillColor: "transparent",
+          strokeColor: "#7266ba",
+          pointColor: "#7266ba",
+          data: [7, 9, 12, 14, 22, 24, 29]
+                }
+            ]
+    };
+    var cl2Data = {
+      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      datasets: [
+        {
+          label: "Default",
+          fillColor: "#7266ba",
+          strokeColor: "#7266ba",
+          pointColor: "#7266ba",
+          data: [8, 10, 14, 12, 10, 12, 14]
+                },
+        {
+          label: "Default",
+          fillColor: "#46be8a",
+          strokeColor: "#46be8a",
+          pointColor: "#46be8a",
+          data: [5, 8, 12, 10, 8, 10, 12]
+                }
+            ]
+    };
+
+    window.onload = function () {
+      var ctxBar = document.getElementById("chartBar").getContext("2d");
+      var cm3 = document.getElementById("chart-mini-3").getContext("2d");
+      var cm4 = document.getElementById("chart-mini-4").getContext("2d");
+      var cm5 = document.getElementById("chart-mini-5").getContext("2d");
+      var cl1 = document.getElementById("cl1").getContext("2d");
+      var cl2 = document.getElementById("cl2").getContext("2d");
+      var ctxLine2 = document.getElementById("chartLine2").getContext("2d");
+
+
+      window.myBar = new Chart(ctxBar).Bar(barChartData, {
+        showScale: false,
+        barShowStroke: false,
+        barValueSpacing: 0,
+        barDatasetSpacing: 0
+      });
+
+      window.myLine = new Chart(cm3).Line(cm3Data, {
+        showScale: false,
+        pointDotStrokeWidth: 3,
+        bezierCurve: false
+      });
+
+      window.myBar = new Chart(cm4).Bar(cm4Data, {
+        showScale: false,
+        barShowStroke: false,
+        barValueSpacing: 50,
+        barDatasetSpacing: 0
+      });
+
+      window.myLine = new Chart(cm5).Line(cm5Data, {
+        showScale: false,
+        pointDot: false,
+        bezierCurve: false
+      });
+
+      window.myLine = new Chart(cl1).Line(cl1Data, {
+        showScale: false,
+        pointDot: false,
+        bezierCurve: false
+      });
+
+      window.myLine = new Chart(cl2).Line(cl2Data, {
+        showScale: false,
+        pointDot: false,
+        bezierCurve: false
+      });
+
+      window.myLine = new Chart(ctxLine2).Line(lineChartData2, {
+        showScale: false,
+        pointDot: false,
+        bezierCurve: true,
+        showTooltips: false
+      });
+
+    };
+  </script>
+  <script>
+    $(document).ready(function () {
+      $("#calendar-mini").zabuto_calendar({
+        today: true,
+        weekstartson: 0,
+        legend: [
+          {
+            type: "text",
+            label: "Meet your friends today",
+            badge: "11:30"
+                    },
+          {
+            type: "text",
+            label: "Tweet “thanks” for your followers",
+            badge: "21:00"
+                    }
+                ]
+      });
+
+      $(".legend-text").wrap("<a href='todo.html'></a>");
+    });
+  </script>
+  <script src="{% static 'dashboard/js/skycons.js' %}"></script>
+  <script>
+    var skycons = new Skycons({
+      "color": "white"
+    });
+    skycons.add("icon1", Skycons.PARTLY_CLOUDY_DAY);
+    skycons.add("icon2", Skycons.CLEAR_DAY);
+    skycons.play();
+  </script>
+  <script src="{% static 'dashboard/js/jquery.nicescroll.min.js' %}"></script>
+  <script src="{% static 'dashboard/js/TweenMax.min.js' %}"></script>
+  <script src="{% static 'dashboard/js/chat.js' %}"></script>
+  <script src="{% static 'dashboard/js/peppermint.min.js' %}"></script>
+  <script>
+
+
+    $('.team-body').Peppermint({
+      dots: true
+    });
+
+      //UltraWidget
+      function dynamicWidget(id, time, number, attr) {
+        setTimeout(function(){
+        $("#" + id).prop('Counter',0).animate({
+              Counter: number
+          }, {
+              duration: time,
+              step: function (now) {
+                if(attr){
+                  $("#" + id + " .inform-value").text(Math.ceil(now) + attr);
+                }
+                else{
+                  $("#" + id + " .inform-value").text(Math.ceil(now));
+                }
+              }
+          });
+        }, 350);
+      };
+
+      function slowCount(id, number, time) {
+        setTimeout(function(){
+        var n = +number;
+          setInterval(
+            function(){
+              $("#" + id + " .inform-value").text(n++);
+            }, time
+          );
+        }, 2500);
+      };
+
+
+
+      dynamicWidget("ultra1", 2000, 400);
+      dynamicWidget("ultra2", 2000, 13140, " $");
+      dynamicWidget("ultra3", 2000, 9001);
+      dynamicWidget("ultra4", 2000, 350);
+      dynamicWidget("ultra5", 6000, 74, " %");
+      dynamicWidget("ultra6", 14000, 46, " %");
+
+      slowCount("ultra1", 400 , 2000);
+      slowCount("ultra3", 9001 , 3300);
+
+      $("#sparkpie").sparkline([4, 6, 4, 2], {
+        type: 'pie',
+        width: '46px',
+        height: '46px',
+        sliceColors: ["#39bfe8", "#46be8a", "#f2a654", "#7266ba"]
+      });
+
+      $("#sparkpie2").sparkline([4, 8, 4, 5], {
+        type: 'pie',
+        width: '46px',
+        height: '46px',
+        sliceColors: ["#ff64b0", "#46be8a", "#f2a654", "#7266ba"]
+      });
+
+      $("#sparkchart-3").sparkline([7, 8, 12, 9, 11, 10, 9], {
+        type: 'bar',
+        barColor: "#7266ba",
+        barWidth: '6px',
+        barSpacing: '3px',
+        height: "40px"
+      });
+
+      $("#sparkchart-4").sparkline([7, 8, 12, 9, 11, 10, 9], {
+        type: 'line',
+        height: "40px",
+        width: "60px",
+        spotRadius: 0,
+        fillColor: "#7266ba",
+        lineColor: "#7266ba",
+        highlightLineColor: "#f2a654"
+      });
+
+      $("#sparkchart-5").sparkline([8, 13, 6, 11, 8, 9, 10, 12], {
+        type: 'line',
+        height: "40px",
+        width: "60px",
+        spotRadius: 0,
+        lineWidth: 2,
+        fillColor: "#fff",
+        lineColor: "#7266ba",
+        highlightLineColor: "#f2a654"
+      });
+
+
+      $("#sparkchart-6").sparkline([8, 5, 13, 6, 9, 10, 4], {
+        type: 'bar',
+        barColor: "#7266ba",
+        barWidth: '6px',
+        barSpacing: '3px',
+        height: "40px"
+      });
+
+  </script>
+
+</body>
+</html>
+

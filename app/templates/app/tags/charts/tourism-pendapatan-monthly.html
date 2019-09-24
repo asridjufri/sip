@@ -1,0 +1,41 @@
+
+<script>
+        $(document).ready(function(){
+            $.get("{% url 'ajax-chart-tourism-pendapatan-monthly' %}", function(data){
+                Object.keys(data.series).map(function(key, index) {
+                    data.series[key].data.map(function(value, keys, index) {
+                        data.series[key].data[keys][0]=new Date(value[0]).getTime()
+                    })
+                });
+                var opt ={
+                    title: {
+                        text: data.title
+                    },
+                    xAxis: {
+                        type: 'datetime',
+                        // tickLength: 1,
+                        // softMin: 2015,
+                        // softMax: 2019
+                        
+                        
+                    },
+                    yAxis: {
+                        title: {
+                        text: ' Pendapatan'
+                        }
+                    },
+                    legend: {
+                        layout: 'horizontal',
+                        // align: 'right',
+                        // verticalAlign: 'middle'
+                    },
+
+                    series: data.series,
+                }
+                Highcharts.chart("{{container_id}}",opt) ;
+            
+            // -- end of ajax
+            console.log(JSON.stringify(opt))
+            });
+        })
+    </script>

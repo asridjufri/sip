@@ -1,0 +1,346 @@
+
+{% extends 'app/shared/base.html' %}
+{% load static%}
+
+{% block body %}
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+                <h2>Data Pariwisata<small> Akomodasi</small></h2>
+                <ol class="breadcrumb">
+                    
+                </ol>
+    </div>
+    <div class="col-lg-2">
+            
+    </div>
+</div>
+<div class="wrapper wrapper-content">
+     <div class="row animated fadeInRight">
+         <div class="col-lg-12">
+             <div class="ibox float-e-margins">
+                 <div class="ibox-title">
+                        <h5>Add Akomodasi </h5>
+                        <div class="ibox-tools">                            
+                        </div>
+                </div>
+                 <div class="ibox-content" id="ibox-content">
+                     <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="m-b-md">
+                                        <a href="?module=akomodasi" class="btn btn-default buttons-copy buttons-html5 btn-sm pull-right">Back</a>
+                                        
+                                    </div>
+                                    
+                                </div>
+                    </div>
+                     <div class="row">
+                         <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                              
+                              <div class="x_content">
+                                <br>
+                                <form id="addform" method="post" enctype="multipart/form-data" action="index.php?module=akomodasi&amp;action=add" class="form-horizontal form-label-left">
+                                                                        <!-- nama -->
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">Nama Akomodasi <span class="required">*</span>
+                                    </label>
+
+                                   
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <input type="text" id="txtname" name="txtname" required="required" class="form-control col-md-7 col-xs-12" value="">
+                                    </div>
+
+                                  </div>
+
+                                 <!-- name -->
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">Status <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-2 ">
+                                      <select class="form-control" id="txtstatus" name="txtstatus">
+                                        <option value="Aktif">Aktif</option>
+                                        <option value="Non Aktif">Non Aktif</option>
+                                        
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <!-- === -->
+
+                                  <!-- tgl input -->
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">Tanggal Input <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-3">
+                                      <input type="text" id="txtinput" name="txtinput" class="form-control col-md-7 col-xs-12" value="2019-09-24 06:17:45" readonly="">
+                                    </div>
+                                  </div>
+                                  <!-- === -->
+
+                                  <!-- file input -->
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">Gambar utama <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-3">
+                                      <input type="file" id="txtfile1" name="txtfile1" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                    <div class="col-md-3">
+                                      <input type="hidden" id="altfile" name="altfile" class="form-control col-md-7 col-xs-12" value="">
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">Gambar kedua <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-3">
+                                      <input type="file" id="txtfile2" name="txtfile2" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                    <div class="col-md-3">
+                                      <input type="hidden" id="altfile2" name="altfile2" class="form-control col-md-7 col-xs-12" value="">
+                                    </div>
+                                  </div>
+                                  <!-- === -->
+
+                                   <!--//-->
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 " for="modulename">karyawan <span class="required"></span>
+                                    </label>
+
+                                   <label class="control-label col-md-2" for="modulename">Laki-laki <span class="required"></span>
+                                    </label>
+
+                                     <div class="col-md-2">
+                                      <input type="number" id="txtlaki" name="txtlaki" required="required" class="form-control col-md-7 col-xs-12" value="">
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                   <label class="control-label col-md-5" for="modulename">Perempuan <span class="required"></span>
+                                    </label>
+
+                                     <div class="col-md-2">
+                                      <input type="number" id="txtwanita" name="txtwanita" required="required" class="form-control col-md-7 col-xs-12" value="">
+                                    </div>
+                                  </div>
+                                  <!-- // -->
+
+                                  <!--//-->
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">Category <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-6 col-sm-6 col-xs-12">
+                                     <input type="text" id="txtcategory" name="txtcategory" readonly="readonly" class="form-control col-md-7 col-xs-12" value="Akomodasi">
+                                      
+                                    </div>
+                                  </div>
+                                  <!-- // -->
+
+                                  <!--//-->
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">Jenis <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-6 col-sm-6 col-xs-12">
+                                     <select class="form-control" id="txtjenis" name="txtjenis">
+                                        <option value="-"> </option>
+                                        <option value="0f1b26a1-93dc-11e8-941e-2cfda175c800">Bintang I</option><option value="13be0bfb-93dc-11e8-941e-2cfda175c800">Bintang II</option><option value="183b698e-93dc-11e8-941e-2cfda175c800">Bintang III</option><option value="1b967a15-93dc-11e8-941e-2cfda175c800">Bintang IV</option><option value="207f781c-93dc-11e8-941e-2cfda175c800">Bintang V</option><option value="73cd253d-991b-11e8-846f-2cfda175c800">Bumi Perkemahan</option><option value="62850d1e-991b-11e8-846f-2cfda175c800">Hotel Bintang</option><option value="688f15f1-991b-11e8-846f-2cfda175c800">Hotel Melati</option><option value="07b7f13c-3524-4ba0-bc0d-18f7ff8cac6a">Non Bintang</option><option value="85707dc8-991b-11e8-846f-2cfda175c800">Pondok Wisata</option><option value="7e4283ef-991b-11e8-846f-2cfda175c800">Vila</option>                                      </select>
+                                    </div>
+                                  </div>
+                                  <!-- // -->
+
+                                   <!--//-->
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">Pengelola <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <select class="form-control" id="txtpengelola" name="txtpengelola">
+                                        <option value="Berizin">Berizin</option>
+                                        <option value="Tidak Berizin">Tidak Berizin</option>
+                                        <option value="Di Proses">Di proses</option>
+                                        
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <!-- // -->
+
+                                   <!--//-->
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">Tanggal Surat Izin <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <input type="text" id="txtsuratizin" name="txtsuratizin" required="required" class="form-control col-md-7 col-xs-12" value="2019-09-24">
+                                    </div>
+                                  </div>
+                                  <!-- // -->
+
+                                  <!--//-->
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">Masa Berlaku <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <input type="text" id="txtmasaizin" name="txtmasaizin" required="required" class="form-control col-md-7 col-xs-12" value="">
+                                    </div>
+                                  </div>
+
+                                   <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">No Surat <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <input type="text" id="txtnosurat" name="txtnosurat" required="required" class="form-control col-md-7 col-xs-12" value="">
+                                    </div>
+                                  </div>
+                                  <!-- // -->
+
+                                  <!--//-->
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">kota <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <input type="text" id="txtwilayah" name="txtwilayah" readonly="readonly" class="form-control col-md-7 col-xs-12" value="Kota Tangerang Selatan">
+                                    </div>
+                                  </div>
+                                  <!-- // -->
+
+                                  <!--//-->
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">Kecamatan <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <select class="form-control" id="txtkecamatan" name="txtkecamatan">
+                                        <option value="-"> </option>
+                                        <option value="1">ciputat</option><option value="2">ciputat timur</option><option value="3">pamulang</option><option value="4">pondok aren</option><option value="5">serpong</option><option value="6">serpong utara</option><option value="7">setu</option>                                      </select>
+                                  </div>
+                                  </div>
+                                  <!-- // -->
+
+                                  <!--//-->
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">Alamat <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <textarea type="text" id="txtalamat" name="txtalamat" required="required" class="form-control col-md-7 col-xs-12" value="">                                        </textarea> 
+                                    </div>
+                                  </div>
+                                  <!-- // -->
+
+                                  <!--//-->
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">Fasilitas <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <textarea type="text" id="txtfasilitas" name="txtfasilitas" required="required" class="form-control col-md-7 col-xs-12" value="">                                        </textarea> 
+                                    </div>
+                                  </div>
+                                  <!-- // -->
+
+                                   <!--//-->
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">Nomor Telephone <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <input type="text" id="txtno" name="txtno" required="required" class="form-control col-md-7 col-xs-12" value="">
+                                    </div>
+                                  </div>
+                                  <!-- // -->
+
+                                   <!--//-->
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">Email <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <input type="text" id="txtemail" name="txtemail" required="required" class="form-control col-md-7 col-xs-12" value="">
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modulename">kordinat <span class="required"></span>
+                                    </label>
+
+                                   
+                                     <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" id="testlat" name="testlat" class="form-control col-md-7 col-xs-12" value="">
+
+                                        <input type="text" id="testlang" name="testlang" class="form-control col-md-7 col-xs-12" value="">
+                                    </div>
+                                  </div>
+
+                                  
+                                  
+                                  <div id="space">
+                                     <div id="map" style="width:47%; height: 20%; position: absolute;"></div>
+                                  </div>
+                                 
+                                
+  
+
+                                  <div class="form-group">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                      <p><span>*</span> Required field</p>
+                                    </div>
+                                  </div>
+                                  <div class="clearfix"></div>    
+                                  <div class="ln_solid"></div>
+                                  <div class="form-group">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                      <input type="hidden" id="action" name="action" value="add">    
+                                      <button type="reset" id="btncancel" class="btn btn-primary">Cancel</button>
+                                      <button type="submit" id="btnsubmit" class="btn btn-success">Submit</button>
+                                    </div>
+                                  </div>
+
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     
+            
+
+            
+
+          </div>
+
+{%endblock body%}
+
+
+{% block js_footer%}
+
+{% endblock%}
+
+{% block css_header %}
+  
+{% endblock %}

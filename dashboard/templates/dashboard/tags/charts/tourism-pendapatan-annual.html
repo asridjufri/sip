@@ -1,0 +1,36 @@
+
+<script>
+        $(document).ready(function(){
+            $.get("{% url 'ajax-chart-tourism-pendapatan-annual' %}", function(data){
+                var opt ={
+                    title: {
+                        text: data.title
+                    },
+                    xAxis: {
+                        // type: 'datetime',
+                        // tickLength: 1,
+                        // softMin: 2015,
+                        // softMax: 2019
+                        
+                        
+                    },
+                    yAxis: {
+                        title: {
+                        text: ' Pendapatan'
+                        }
+                    },
+                    legend: {
+                        layout: 'horizontal',
+                        // align: 'right',
+                        // verticalAlign: 'middle'
+                    },
+
+                    series: data.series,
+                }
+                Highcharts.chart("{{container_id}}",opt) ;
+            
+            // -- end of ajax
+            console.log(JSON.stringify(opt))
+            });
+        })
+    </script>

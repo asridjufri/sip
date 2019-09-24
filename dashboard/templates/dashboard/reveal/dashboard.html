@@ -1,0 +1,77 @@
+{%load static%}
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>dinas pariwisata</title>
+
+		<link rel="stylesheet" href="{% static 'dashboard/reveal/css/reset.css' %}">
+		<link rel="stylesheet" href="{% static 'dashboard/reveal/css/reveal.css' %}">
+		<link rel="stylesheet" href="{% static 'dashboard/reveal/css/theme/black.css' %}">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="{% static 'dashboard/reveal/lib/css/monokai.css' %}">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? "{% static 'dashboard/reveal/css/print/pdf.css' %}" : "{% static 'dashboard/reveal/css/print/paper.css' %}";
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+            <div class="slides">
+                {% for slide in slides %}
+                    {% if slide.slide_type == 'iframe' %}
+                        <section  data-autoslide="{{slide.duration}}?autoplay=0"  data-background-transition="zoom"  data-background-iframe="{{slide.data_string}}"  data-autoplay></section>
+                    {% elif slide.slide_type == 'image' %}
+                        <section data-autoslide="{{slide.duration}}" data-background="{{slide.data_string}}"></section>
+                    {% elif slide.slide_type == 'video' %}
+                        <section data-autoslide="{{slide.duration}}" data-background-video-loop='true' data-background-size="cover" data-background-video="{{slide.data_string}}"></section>
+                    {% elif slide.slide_type == 'simple_text' %}
+                        <section data-autoslide="{{slide.duration}}" >
+                            {{slide.data_string}}
+                        </section>
+                    {% elif slide.slide_type == 'quotes' %}
+                        <section data-autoslide="{{slide.duration}}" >
+                            <blockquote>{{slide.data_string}}</blockquote>
+                        </section>
+                    {% elif slide.slide_type == 'html' %}
+                        <section data-autoslide="{{slide.duration}}" >
+                                {% autoescape off %}
+                                {{slide.data_string}}
+                                {% endautoescape %}
+                        </section>
+                    {% endif %}
+                {%endfor%}
+
+            </div>
+           
+			
+		</div>
+
+		<script src="{% static 'dashboard/reveal/js/reveal.js' %}"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				autoSlide: 5000,
+				
+				loop:true,
+				dependencies: [
+					{ src: "{% static 'dashboard/reveal/plugin/markdown/marked.js' %}" },
+					{ src: "{% static 'dashboard/reveal/plugin/markdown/markdown.js' %}" },
+					{ src: "{% static 'dashboard/reveal/plugin/notes/notes.js' %}", async: true },
+					{ src: "{% static 'dashboard/reveal/plugin/highlight/highlight.js' %}", async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

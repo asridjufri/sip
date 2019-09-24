@@ -1,0 +1,71 @@
+<script>
+$(document).ready(function(){
+    Highcharts.chart('{{container_id}}', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Jumlah wisatawan berdasarkan asal negara per tahun'
+        },
+        subtitle: {
+            text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>'
+        },
+        xAxis: {
+            categories: ['China', 'Jepang', 'Jerman', 'France', 'Inggris'],
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Jumlah Wisatawan',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' millions'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 80,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor:
+                Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Tahun 2015',
+            data: [107, 31, 635, 203, 2]
+        }, {
+            name: 'Tahun 2016',
+            data: [133, 156, 947, 408, 6]
+        }, {
+            name: 'Tahun 2017',
+            data: [814, 841, 3714, 727, 31]
+        }, {
+            name: 'Tahun 2018',
+            data: [1216, 1001, 4436, 738, 40]
+        }]
+    });
+
+})
+
+</script>

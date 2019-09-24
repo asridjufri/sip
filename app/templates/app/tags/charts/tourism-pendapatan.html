@@ -1,0 +1,37 @@
+
+<script>
+    $(document).ready(function(){
+        $.get("{% url 'ajax-chart-tourism-pendapatan' %}", function(data){
+            Highcharts.chart('{{container_id}}', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: data.title
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b><br/>{point.y}'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        }
+                    }
+                },
+                series: [{
+                name: data.name,
+                colorByPoint: true,
+                data: data.data
+            }]
+        });
+        
+        })
+    })
+</script>
