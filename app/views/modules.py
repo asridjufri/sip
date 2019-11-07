@@ -2,7 +2,8 @@ from django.shortcuts import render
 from app.services import ModuleService
 
 # def _get_
-
+def home(request, appmenu):
+    return render(request, 'app/sliders/index.html')
 def menu(request, appmenu):
     menus = ModuleService.menu_list()
     return render(request, 'app/menu.html',{'menus':menus})
@@ -45,6 +46,7 @@ def statistik_pariwisata(request, appmenu):
     
     data_tourisms = ModuleService.get_list_data_tourist_by_categoryname(category_name)
     return render(request,'app/statistik-pariwisata.html',{'data_tourisms':data_tourisms, 'category_name':category_name,'appmenu':appmenu})
+
 
     
 # def jasamakanan(request):

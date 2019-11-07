@@ -1,0 +1,88 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Backend Application</title>
+      <link href="images/dumdum.ico" rel="shortcut icon"/>
+      
+      <link href="{% static 'app/login/jquery-ui.css' %}" rel="stylesheet">
+    
+      <!-- Bootstrap -->
+    <link href="{% static 'app/login/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{% static 'app/login/font-awesome.css' %}" rel="stylesheet">
+      
+    <!-- icheck style -->
+    <link href="{% static 'js/plugins/iCheck/skins/flat/green.css' %}" rel="stylesheet">
+      
+    <!-- Animate.css -->
+    <link href="{% static 'app/login/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'app/login/style.css' %}" rel="stylesheet">
+       
+    <!-- Datatables -->
+    <link href="{% static 'app/login/dataTables.bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'app/login/buttons.bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'app/login/fixedHeader.bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'app/login/responsive.bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'app/login/scroller.bootstrap.min.css' %}" rel="stylesheet">
+    
+    <!-- Dropzone.js -->
+    <link href="{% static 'app/login/dropzone.min.css' %}" rel="stylesheet">
+      
+     
+      
+      <!-- loading style-->
+      <link rel="stylesheet" href="{% static 'app/login/jquery.loadingModal.css' %}">
+      
+       <!-- Toastr style -->
+    <link href="{% static 'app/login/toastr.min.css" rel="stylesheet">
+      
+      <!-- Custom Theme Style -->
+    <link href="{% static 'app/login/custom.css' %}" rel="stylesheet">
+    
+  </head>
+    
+
+  <body class="gray-bg" style="background-image: url({% static 'app/login/bck-4.png' %}); background-size: cover;">
+
+
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+                <h1 class="logo-name"><img src="{% static 'app/login/tns-1.png' %}" width="300px" alt="" ></h1>
+            </div>
+       <!--      <h3>Welcome to Backend application</h3>
+            <p></p>
+            <p>Login in.</p> -->
+            
+            <form class="m-t" role="form" method="post" >
+              {%csrf_token%}
+                                <div class="form-group">
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Username" required />
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required />
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+            </form>
+            <p class="m-t"> <small style="color: white;">Web Application backend  &copy; 2017</small> </p>
+        </div>
+    </div>
+
+
+    <!-- Mainly scripts -->
+    <script src="{% static 'app/login/jquery-2.1.1.js' %}"></script>
+    <script src="{% static 'app/login/bootstrap.min.js' %}"></script>  
+    <!-- -->  
+    
+      
+  </body>
+
+</html>

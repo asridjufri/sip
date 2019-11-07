@@ -24,6 +24,12 @@ def dashboard2(request):
 def dashboard3(request):
     year=request.GET.get('year',datetime.now().year)
     kecamatan=request.GET.get('kecamatan',None)
+    dashboard_id = request.GET.get('dashboard_id',None)
+    if dashboard_id:
+        dashboard = Dashboard.objects.filter(pk=dashboard_id).first()
+        if dashboard:
+            return render(request, 'dashboard/dashboard3.html',{'year':year,'kecamatan':kecamatan,'dashboard':dashboard})
+
     return render(request, 'dashboard/dashboard3.html',{'year':year,'kecamatan':kecamatan})
 
 def get_chart_number_tourism_per_category_per_year(request):

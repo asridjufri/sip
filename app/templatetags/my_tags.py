@@ -6,7 +6,7 @@ register=template.Library()
 @register.inclusion_tag('app/tags/menu.html')
 def load_menu(user):
     allowed_menus = MenuService.get_allowed_menus('admin')
-    return {'allowed_menus':allowed_menus}
+    return {'allowed_menus':allowed_menus,'user':user}
     
     
 @register.inclusion_tag('app/tags/charts/tourism-pendapatan.html')

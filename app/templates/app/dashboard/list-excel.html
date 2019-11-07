@@ -54,7 +54,7 @@
                                     <td>
                                         <a href="{% url 'import-excel'  %}?id={{item.pk}}">Import Data</a> &nbsp;
                                         <a href="{% url 'log-excel'  %}?id={{item.pk}}">Log</a> &nbsp;
-                                        <a href="#">Delete</a>
+                                        <a href="{% url 'delete-excel' pk=item.pk %}">Delete</a>
                                         
                                     </td>
                                     

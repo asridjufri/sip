@@ -1,8 +1,24 @@
 from django.shortcuts import render
 from app.models import Appmenu, MasterJenis, Appgroup
 
+from django.contrib.auth.views import LoginView, LogoutView
+
 def test(request):
     return render(request,'app/index.html')
+
+def home(request):
+    return render(request, 'app/sliders/index.html')
+
+#------- auth handle
+class CustomLoginView(LoginView):
+	template_name = 'app/login/index.html'
+	
+
+class CustomLogoutView(LogoutView):
+	pass
+
+def login_page(request):
+	return render(request, 'app/login/index.html')
 
 def menu(request):
     menus = Appmenu.objects.filter(deleted=0, module__modulename__isnull=False)

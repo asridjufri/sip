@@ -3,6 +3,7 @@ from django.http import HttpResponseNotFound, HttpResponseServerError
 from django.conf import settings
 from app.services import ModuleService
 
+from django.contrib.auth.decorators import login_required
 
 
 def normalize_module_name(modulename,appmenu):
@@ -20,6 +21,7 @@ def normalize_module_name(modulename,appmenu):
 
     return modulename.lower()
 
+@login_required
 def dispatcher(request):
 
     module_name = request.GET.get('module',ModuleService.get_default_modulename('admin'))
@@ -33,6 +35,8 @@ def dispatcher(request):
         if action_name.lower() == 'add':
             print("action is add")
             module = 'add_%s' %module
+        elif action_name.lower() == 'delete':
+            module = 'delete_%s' %module
         print(module)
         
         module_func = getattr(modules,module)

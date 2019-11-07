@@ -18,6 +18,11 @@
         <div class="ibox ">
             <div class="ibox-title">
                 <h5>Daftar Dashboard</h5>
+                <div class="">
+                    <a href="{% url 'add-dashboard' %}" class="btn btn-success">
+                        Tambah Dashboard
+                    </a>
+                </div>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -54,7 +59,7 @@
             <tbody>
                 {% for item in object_list %}
                 <tr class="gradeX">
-                        <td><a target="_blank" href="{% url 'dynamic-dashboard' %}?id={{item.pk}}"> {{item.name}}</a></td>
+                        <td><a href="{% url 'list-slide' %}?id={{item.pk}}"> {{item.name}}</a></td>
                         <td>{{item.description}}
                         </td>
                         <td>{{item.default_duration}}</td>
@@ -64,7 +69,7 @@
                             <a href="{% url 'dynamic-dashboard' %}?id={{item.pk}}">Preview</a>&nbsp;
                             <a href="{% url 'list-slide' %}?id={{item.pk}}">Slides</a>&nbsp;
                             {% if item.readonly == '1' %}readonly 
-                            {% else %}<a href="{% url 'edit-dashboard' pk=item.pk %}">Edit</a> &nbsp;<a href="#">Delete</a>
+                            {% else %}<a href="{% url 'edit-dashboard' pk=item.pk %}">Edit</a> &nbsp;<a href="{% url 'delete-dashboard' pk=item.pk %}">Delete</a>
                             {%endif%}
                         </td>
                         

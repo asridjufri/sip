@@ -67,7 +67,11 @@
               <h6 class="secondary">Kota Tangerang Selatan</h6>
             </div>
             <div class="unit morphsearch">
-              <marquee> <h5>:: Dinas Pariwisata :: hari ini situgintung mengadakan event gratis berenang ::</h5></marquee>
+              {% if dashboard %}
+              <marquee> <h5> {{dashboard.running_text}} </h5></marquee>
+              {% else %}
+              <marquee> ...</marquee>
+              {% endif %}
             </div>
             <div class="unit time">
               <span class="current-time">18:38</span>

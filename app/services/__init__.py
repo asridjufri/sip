@@ -16,7 +16,7 @@ class MenuService():
         array_ordered_menu=[]
         for menu in menus:
             cleaned_menu.append(menu.replace("*",""))
-        allowed_menu = Appmenu.objects.filter(menuid__in=cleaned_menu, deleted=0,module__deleted=0).order_by('menuorder')
+        allowed_menu = Appmenu.objects.filter(menuid__in=cleaned_menu, deleted=0,module__deleted=0).exclude(menutext__in=['Dashboard','Aministration','Profile','Logout']).order_by('menuorder')
         for menu in allowed_menu:
             if menu.parentid is None:
                 if str(menu.menuid) in ordered_menu:

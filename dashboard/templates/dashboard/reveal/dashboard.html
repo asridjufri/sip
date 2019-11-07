@@ -28,7 +28,7 @@
             <div class="slides">
                 {% for slide in slides %}
                     {% if slide.slide_type == 'iframe' %}
-                        <section  data-autoslide="{{slide.duration}}?autoplay=0"  data-background-transition="zoom"  data-background-iframe="{{slide.data_string}}"  data-autoplay></section>
+                        <section  data-autoslide="{{slide.duration}}?autoplay=0"  data-background-transition="zoom"  data-background-iframe="{{slide.data_string}}&dashboard_id={{dashboard.pk}}"  data-autoplay></section>
                     {% elif slide.slide_type == 'image' %}
                         <section data-autoslide="{{slide.duration}}" data-background="{{slide.data_string}}"></section>
                     {% elif slide.slide_type == 'video' %}
